@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Test Server</title>
+        <style>
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+            input[type="textbox"] {
+                font-size: 16px;
+                padding: 10px 20px;
+                margin-right: 10px;
+            }
+            pre {
+                font-size: 14px;
+                color: #333;
+                white-space: pre-wrap;
+            }
+        </style>
+        <script>
+            window.addEventListener('load', () => {
+                // open a WebSocket connection to the server
+                const socket = new WebSocket('ws://' + window.location.host + '/ws');
+                
+                socket.onopen = function(event) {
+                    const pre = document.querySelector("pre");
+                    pre.textContent = `WebSocket connection opened\n` + pre.textContent;
+                };
+                socket.onmessage = function(event) {
+                    const pre = document.querySelector("pre");
+                    pre.textContent = `${event.data}\n` + pre.textContent;
+                };
+                socket.onclose = function(event) {
+                    const pre = document.querySelector("pre");
+                    pre.textContent = `WebSocket closed: Code=${event.code}, Reason=${event.reason}\n` + pre.textContent;
+                };
+                socket.onerror = function(error) {
+                    const pre = document.querySelector("pre");
+                    pre.textContent = `WebSocket Error: ${error.message}\n` + pre.textContent;
+                };
+                document.querySelector('button').addEventListener('click', () => {
+                    let name = document.querySelector('input').value;
+                    if (name === "") {
+                        name = "Anonymous";
+                    }
+                    socket.send(`${name}`);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Test Server is Running</h1>
+        <input type="textbox" placeholder="Enter Name..." /><button>Send Ping</button>
+        <br />
+        <pre></pre>
+    </body>
+</html>
