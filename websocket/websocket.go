@@ -1,3 +1,11 @@
+/*
+WebSocket implementation for Go
+Author: Wayne Stewart
+License: MIT
+
+https://datatracker.ietf.org/doc/html/rfc6455
+*/
+
 package websocket
 
 import (

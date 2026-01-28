@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Test Server</title>
+        <style>
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+            input[type="textbox"] {
+                font-size: 16px;
+                padding: 10px 20px;
+                margin-right: 10px;
+            }
+            #name{ width: 150px; }
+            #message{ width: 400px; }
+            #home{ float: right; }
+            pre {
+                font-size: 14px;
+                color: #333;
+                white-space: pre-wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <a id="home" href="/">Back to Index</a>
+        <h1>Chat Room</h1>
+        <h3>Enter your name and be respectful of others!</h3>
+        <input id="name" type="textbox" placeholder="Enter Name..." />
+        <input id="message" type="textbox" placeholder="Enter Message..." />
+        <br />
+        <pre></pre>
+    </body>
+    <script>
+        // open a WebSocket connection to the server
+        const socket = new WebSocket('ws://' + window.location.host + '/chat-ws');
+        
+        //socket.onopen = function(event) {
+            //const pre = document.querySelector("pre");
+        //};
+        socket.onmessage = function(event) {
+            const pre = document.querySelector("pre");
+            pre.textContent = `${event.data}\n` + pre.textContent;
+        };
+        socket.onclose = function(event) {
+            const pre = document.querySelector("pre");
+            pre.textContent = `You have been disconnected!\n` + pre.textContent;
+        };
+        socket.onerror = function(error) {
+            const pre = document.querySelector("pre");
+            pre.textContent = `WebSocket Error: ${error.message}\n` + pre.textContent;
+        };
+        document.querySelector('#message').addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                let name = document.querySelector('#name').value.trim();
+                let message = document.querySelector('#message').value.trim();
+                if (message === "") {
+                    return;
+                }
+                document.querySelector('#message').value = "";
+                if (name === "") {
+                    name = "Anonymous";
+                }
+                socket.send(`${name}: ${message}`);
+            }
+        });
+    </script>
+</html>

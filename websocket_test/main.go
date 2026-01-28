@@ -10,14 +10,22 @@ import (
 func main() {
 	fmt.Println("Starting Test Server")
 
-	websockets := []*websocket.WebSocket{}
+	chats := []*websocket.WebSocket{}
+
+	http.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, "/", 302)
+	})
 
 	http.HandleFunc("GET /{$}", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "web/index.html")
 	})
-	http.HandleFunc("GET /ws", func(w http.ResponseWriter, r *http.Request) {
 
-		// fmt.Println("WebSocket endpoint hit")
+	http.HandleFunc("GET /chat", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "web/chat.html")
+	})
+
+	http.HandleFunc("GET /chat-ws", func(w http.ResponseWriter, r *http.Request) {
+
 		// PrintRequestHeaders(r)
 
 		ws, err := websocket.Upgrade(w, r)
@@ -27,18 +35,23 @@ func main() {
 			return
 		}
 
+		for _, other_ws := range chats {
+			other_ws.SendText("A new user has entered the chat!")
+		}
+
 		ws.ReceiveTextHandler = (func(ws *websocket.WebSocket, message string) {
-			for _, other_ws := range websockets {
+			for _, other_ws := range chats {
 				other_ws.SendText(message)
 			}
-			//fmt.Println("Received message:", string(message))
 		})
 
 		ws.ClosedHandler = (func(ws *websocket.WebSocket) {
-			fmt.Printf("WebSocket %d closed\n", ws.ID)
+			for _, other_ws := range chats {
+				other_ws.SendText("A user has left the chat.")
+			}
 		})
 
-		websockets = append(websockets, ws)
+		chats = append(chats, ws)
 
 		ws.SendText("Welcome to the Chat!")
 	})
