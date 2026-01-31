@@ -1,0 +1,145 @@
+{
+   "agent": "websocket-test",
+   "behavior": "FAILED",
+   "behaviorClose": "FAILED",
+   "case": 119,
+   "closedByMe": true,
+   "createStats": true,
+   "createWirelog": true,
+   "description": "Send a text message with payload which is not valid UTF-8 in one fragment.<br><br>Payload: 0x808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbe",
+   "droppedByMe": true,
+   "duration": 1,
+   "expectation": "The connection is failed immediately, since the payload is not valid UTF-8.",
+   "expected": {
+      "OK": []
+   },
+   "expectedClose": {
+      "closeCode": [
+         1007
+      ],
+      "closedByMe": false,
+      "closedByWrongEndpointIsFatal": true,
+      "requireClean": false
+   },
+   "failedByMe": true,
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: F/FGbRosF/Yz4L5c849ARg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: PNOqy+qhAC6xcQj8FUNLgHzLXsg=\r\n\r\n",
+   "id": "6.12.8",
+   "isServer": false,
+   "localCloseCode": 1007,
+   "localCloseReason": "encountered invalid UTF-8 while processing text message at payload octet index 0",
+   "received": [],
+   "remoteCloseCode": null,
+   "remoteCloseReason": null,
+   "reportCompressionRatio": false,
+   "reportTime": false,
+   "result": "Actual events match at least one expected.",
+   "resultClose": "The connection was failed by the wrong endpoint",
+   "rxFrameStats": {
+      "1": 1
+   },
+   "rxOctetStats": {
+      "65": 1,
+      "129": 1
+   },
+   "started": "2026-01-31T05:30:52.989Z",
+   "trafficStats": null,
+   "txFrameStats": {
+      "1": 1,
+      "8": 1
+   },
+   "txOctetStats": {
+      "69": 1,
+      "88": 1,
+      "264": 1
+   },
+   "wasClean": false,
+   "wasCloseHandshakeTimeout": false,
+   "wasNotCleanReason": null,
+   "wasOpenHandshakeTimeout": false,
+   "wasServerConnectionDropTimeout": false,
+   "wirelog": [
+      [
+         "TO",
+         [
+            264,
+            "474554202f77732d6175746f6261686e20485454502f312e310d0a557365722d4167656e743a204175746f6261686e5465737453756974652f32352e31302e31 ..."
+         ],
+         false
+      ],
+      [
+         "RO",
+         [
+            129,
+            "485454502f312e312031303120537769746368696e672050726f746f636f6c730d0a557067726164653a20776562736f636b65740d0a436f6e6e656374696f6e ..."
+         ]
+      ],
+      [
+         "TF",
+         [
+            63,
+            "0x808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbe ..."
+         ],
+         1,
+         true,
+         0,
+         "46c06f5b",
+         null,
+         null,
+         false
+      ],
+      [
+         "TO",
+         [
+            69,
+            "81bf46c06f5bc641edd8c245e9dcce49e5d0ca4de1d4d651fdc8d255f9ccde59f5c0da5df1c4e661cdf8e265c9fcee69c5f0ea6dc1f4f671dde8f275d9ecfe79 ..."
+         ],
+         false
+      ],
+      [
+         "KL",
+         0.5
+      ],
+      [
+         "RO",
+         [
+            65,
+            "813f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd ..."
+         ]
+      ],
+      [
+         "TF",
+         [
+            82,
+            "0x03ef656e636f756e746572656420696e76616c6964205554462d38207768696c652070726f63657373696e672074657874206d65737361676520617420706179 ..."
+         ],
+         8,
+         true,
+         0,
+         "448b1e8e",
+         null,
+         null,
+         false
+      ],
+      [
+         "TO",
+         [
+            88,
+            "88d2448b1e8e47647be027e46be030ee6ceb20ab77e032ea72e720ab4bda02a626ae33e377e221ab6efc2be87bfd37e270e964ff7bf630ab73eb37f87fe921ab ..."
+         ],
+         false
+      ],
+      [
+         "RF",
+         [
+            0,
+            ""
+         ],
+         1,
+         true,
+         0,
+         false,
+         null
+      ]
+   ]
+}

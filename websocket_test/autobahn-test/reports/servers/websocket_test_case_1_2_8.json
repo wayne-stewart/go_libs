@@ -1,0 +1,706 @@
+{
+   "agent": "websocket-test",
+   "behavior": "OK",
+   "behaviorClose": "OK",
+   "case": 16,
+   "closedByMe": true,
+   "createStats": true,
+   "createWirelog": true,
+   "description": "Send binary message message with payload of length 65536. Sent out data in chops of 997 octets.",
+   "droppedByMe": false,
+   "duration": 9,
+   "expectation": "Receive echo'ed binary message (with payload as sent). Clean close with normal code.",
+   "expected": {
+      "OK": [
+         [
+            "message",
+            "0xfefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe ...",
+            true
+         ]
+      ]
+   },
+   "expectedClose": {
+      "closeCode": [
+         1000
+      ],
+      "closedByMe": true,
+      "requireClean": true
+   },
+   "failedByMe": false,
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: +FLyRVf0BSNPOHGqQ18NqA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: s63xx0lctpMJaU4e85g8UF2Fcow=\r\n\r\n",
+   "id": "1.2.8",
+   "isServer": false,
+   "localCloseCode": 1000,
+   "localCloseReason": null,
+   "received": [
+      [
+         "message",
+         "0xfefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe ...",
+         true
+      ]
+   ],
+   "remoteCloseCode": 1000,
+   "remoteCloseReason": null,
+   "reportCompressionRatio": false,
+   "reportTime": false,
+   "result": "Actual events match at least one expected.",
+   "resultClose": "Connection was properly closed",
+   "rxFrameStats": {
+      "2": 1,
+      "8": 1
+   },
+   "rxOctetStats": {
+      "4": 1,
+      "129": 1,
+      "28682": 1,
+      "36864": 1
+   },
+   "started": "2026-01-31T05:30:52.602Z",
+   "trafficStats": null,
+   "txFrameStats": {
+      "2": 1,
+      "8": 1
+   },
+   "txOctetStats": {
+      "8": 1,
+      "264": 1,
+      "745": 1,
+      "997": 65
+   },
+   "wasClean": true,
+   "wasCloseHandshakeTimeout": false,
+   "wasNotCleanReason": null,
+   "wasOpenHandshakeTimeout": false,
+   "wasServerConnectionDropTimeout": false,
+   "wirelog": [
+      [
+         "TO",
+         [
+            264,
+            "474554202f77732d6175746f6261686e20485454502f312e310d0a557365722d4167656e743a204175746f6261686e5465737453756974652f32352e31302e31 ..."
+         ],
+         false
+      ],
+      [
+         "RO",
+         [
+            129,
+            "485454502f312e312031303120537769746368696e672050726f746f636f6c730d0a557067726164653a20776562736f636b65740d0a436f6e6e656374696f6e ..."
+         ]
+      ],
+      [
+         "TF",
+         [
+            65536,
+            "0xfefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe ..."
+         ],
+         2,
+         true,
+         0,
+         "e011db58",
+         null,
+         997,
+         false
+      ],
+      [
+         "TO",
+         [
+            997,
+            "82ff0000000000010000e011db581eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "KL",
+         10
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "1eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a6 ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "ef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61e ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            997,
+            "25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef ..."
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            745,
+            "a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25a61eef25 ..."
+         ],
+         true
+      ],
+      [
+         "RO",
+         [
+            36864,
+            "827f0000000000010000fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe ..."
+         ]
+      ],
+      [
+         "RO",
+         [
+            28682,
+            "fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe ..."
+         ]
+      ],
+      [
+         "RF",
+         [
+            65536,
+            "0xfefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe ..."
+         ],
+         2,
+         true,
+         0,
+         false,
+         null
+      ],
+      [
+         "TF",
+         [
+            2,
+            "0x03e8"
+         ],
+         8,
+         true,
+         0,
+         "70ce4754",
+         null,
+         null,
+         false
+      ],
+      [
+         "TO",
+         [
+            8,
+            "888270ce47547326"
+         ],
+         false
+      ],
+      [
+         "RO",
+         [
+            4,
+            "880203e8"
+         ]
+      ],
+      [
+         "RF",
+         [
+            2,
+            "0x03e8"
+         ],
+         8,
+         true,
+         0,
+         false,
+         null
+      ]
+   ]
+}

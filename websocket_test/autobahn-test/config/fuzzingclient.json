@@ -1,0 +1,16 @@
+{
+   "options": {"failByDrop": false},
+   "outdir": "./reports/servers",
+
+   "servers": [
+        {
+            "agent": "websocket-test", 
+            "url": "ws://host.docker.internal:9001/ws-autobahn", 
+            "options": {"version": 18}
+        }
+    ],
+
+   "cases": ["*"],
+   "exclude-cases": [],
+   "exclude-agent-cases": {}
+}

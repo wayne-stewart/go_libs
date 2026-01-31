@@ -1,0 +1,166 @@
+{
+   "agent": "websocket-test",
+   "behavior": "FAILED",
+   "behaviorClose": "FAILED",
+   "case": 131,
+   "closedByMe": true,
+   "createStats": true,
+   "createWirelog": true,
+   "description": "Send a text message with payload which is not valid UTF-8 in one fragment.<br><br>Payload: 0xefbf",
+   "droppedByMe": false,
+   "duration": 1,
+   "expectation": "The connection is failed immediately, since the payload is not valid UTF-8.",
+   "expected": {
+      "OK": []
+   },
+   "expectedClose": {
+      "closeCode": [
+         1007
+      ],
+      "closedByMe": false,
+      "closedByWrongEndpointIsFatal": true,
+      "requireClean": false
+   },
+   "failedByMe": true,
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: wOLdSuWVlTdzgWzkEF87eA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: nKxKau61FHEbRlcTUAJv+Cm8row=\r\n\r\n",
+   "id": "6.14.7",
+   "isServer": false,
+   "localCloseCode": 1007,
+   "localCloseReason": "UTF-8 text message payload ended within Unicode code point at payload octet index 2",
+   "received": [],
+   "remoteCloseCode": 1007,
+   "remoteCloseReason": "UTF-8 text message payload ended within Unicode code point at payload octet index 2",
+   "reportCompressionRatio": false,
+   "reportTime": false,
+   "result": "Actual events match at least one expected.",
+   "resultClose": "The connection was failed by the wrong endpoint",
+   "rxFrameStats": {
+      "1": 1,
+      "8": 1
+   },
+   "rxOctetStats": {
+      "4": 1,
+      "87": 1,
+      "129": 1
+   },
+   "started": "2026-01-31T05:30:53.031Z",
+   "trafficStats": null,
+   "txFrameStats": {
+      "1": 1,
+      "8": 1
+   },
+   "txOctetStats": {
+      "8": 1,
+      "91": 1,
+      "264": 1
+   },
+   "wasClean": true,
+   "wasCloseHandshakeTimeout": false,
+   "wasNotCleanReason": null,
+   "wasOpenHandshakeTimeout": false,
+   "wasServerConnectionDropTimeout": false,
+   "wirelog": [
+      [
+         "TO",
+         [
+            264,
+            "474554202f77732d6175746f6261686e20485454502f312e310d0a557365722d4167656e743a204175746f6261686e5465737453756974652f32352e31302e31 ..."
+         ],
+         false
+      ],
+      [
+         "RO",
+         [
+            129,
+            "485454502f312e312031303120537769746368696e672050726f746f636f6c730d0a557067726164653a20776562736f636b65740d0a436f6e6e656374696f6e ..."
+         ]
+      ],
+      [
+         "TF",
+         [
+            2,
+            "0xefbf"
+         ],
+         1,
+         true,
+         0,
+         "b381bcd7",
+         null,
+         null,
+         false
+      ],
+      [
+         "TO",
+         [
+            8,
+            "8182b381bcd75c3e"
+         ],
+         false
+      ],
+      [
+         "KL",
+         0.5
+      ],
+      [
+         "RO",
+         [
+            4,
+            "8102efbf"
+         ]
+      ],
+      [
+         "RF",
+         [
+            2,
+            "0xefbf"
+         ],
+         1,
+         true,
+         0,
+         false,
+         null
+      ],
+      [
+         "TF",
+         [
+            85,
+            "0x03ef5554462d382074657874206d657373616765207061796c6f616420656e6465642077697468696e20556e69636f646520636f646520706f696e7420617420 ..."
+         ],
+         8,
+         true,
+         0,
+         "85f6492b",
+         null,
+         null,
+         false
+      ],
+      [
+         "TO",
+         [
+            91,
+            "88d585f6492b86191c7fc3db710bf193315fa59b2c58f6972e4ea5862852e999284fa593274fe092695cec822142ebd61c45ec95264fe0d62a44e193695bea9f ..."
+         ],
+         false
+      ],
+      [
+         "RO",
+         [
+            87,
+            "885503ef5554462d382074657874206d657373616765207061796c6f616420656e6465642077697468696e20556e69636f646520636f646520706f696e742061 ..."
+         ]
+      ],
+      [
+         "RF",
+         [
+            85,
+            "0x03ef5554462d382074657874206d657373616765207061796c6f616420656e6465642077697468696e20556e69636f646520636f646520706f696e7420617420 ..."
+         ],
+         8,
+         true,
+         0,
+         false,
+         null
+      ]
+   ]
+}

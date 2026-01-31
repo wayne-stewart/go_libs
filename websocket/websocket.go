@@ -36,6 +36,10 @@ var global_frame_max_size int64 = 1024 * 1024 // 1 MB
 var global_max_websockets int32 = 1000
 
 const ERROR_CODE_NORMAL_CLOSURE = uint16(1000)
+const ERROR_CODE_PROTOCOL_ERROR = uint16(1002)
+const ERROR_CODE_UNSUPPORTED_DATA = uint16(1003)
+const ERROR_CODE_POLICY_VIOLATION = uint16(1008)
+const ERROR_CODE_MESSAGE_TOO_BIG = uint16(1009)
 
 const OPCODE_CONTINUATION = byte(0x0)
 const OPCODE_TEXT = byte(0x1)
@@ -100,6 +104,18 @@ func validateExtensionsHeader(value string) (string, error) {
 	return "", nil // ignore extensions for now
 }
 
+func validatePayloadLength(ws *WebSocket, is_control_frame bool, payload_len int64) error {
+	if is_control_frame && payload_len > 125 {
+		closeWebSocket(ws, makeStatusCodeBytes(ERROR_CODE_PROTOCOL_ERROR))
+		return fmt.Errorf("Control frame payload length %d exceeds maximum of 125", payload_len)
+	}
+	if payload_len > global_frame_max_size {
+		closeWebSocket(ws, makeStatusCodeBytes(ERROR_CODE_MESSAGE_TOO_BIG))
+		return fmt.Errorf("Payload length %d exceeds maximum frame size %d", payload_len, global_frame_max_size)
+	}
+	return nil
+}
+
 func makeStatusCodeBytes(code uint16) []byte {
 	buf := make([]byte, 2)
 	binary.BigEndian.PutUint16(buf, code)
@@ -127,7 +143,7 @@ func makeWebSocket(w http.ResponseWriter, r *http.Request) (*WebSocket, error) {
 		return nil, errors.New("HTTP version must be at least 1.1")
 	}
 	header := r.Header.Get("Upgrade")
-	if header != "websocket" {
+	if strings.ToLower(header) != "websocket" {
 		return nil, fmt.Errorf("Invalid Upgrade header: %s", header)
 	}
 	header = r.Header.Get("Connection")
@@ -135,7 +151,7 @@ func makeWebSocket(w http.ResponseWriter, r *http.Request) (*WebSocket, error) {
 		return nil, fmt.Errorf("Invalid Connection header: %s", header)
 	}
 	header = r.Header.Get("Sec-Fetch-Mode")
-	if header != "websocket" {
+	if !(header == "" || strings.ToLower(header) == "websocket") {
 		return nil, fmt.Errorf("Invalid Sec-Fetch-Mode header: %s", header)
 	}
 	header = r.Header.Get("Sec-WebSocket-Version")
@@ -153,10 +169,10 @@ func makeWebSocket(w http.ResponseWriter, r *http.Request) (*WebSocket, error) {
 		return nil, err
 	}
 
-	origin := r.Header.Get("Origin")
-	if origin == "" {
-		return nil, errors.New("Missing Origin header")
-	}
+	// origin := r.Header.Get("Origin")
+	// if origin == "" {
+	// 	return nil, errors.New("Missing Origin header")
+	// }
 
 	client_key := r.Header.Get("Sec-WebSocket-Key")
 	if client_key == "" {
@@ -233,6 +249,25 @@ func readLoop(ws *WebSocket) {
 	}
 }
 
+func readPayload(ws *WebSocket, payload_len int64, is_masked bool, mask_key []byte) ([]byte, error) {
+
+	data := make([]byte, payload_len)
+	data_len := int64(0)
+	for data_len < payload_len {
+		n, err := ws.rw.Read(data[data_len:])
+		if err != nil {
+			return nil, err
+		}
+		data_len += int64(n)
+	}
+
+	if is_masked {
+		maskData(mask_key, data)
+	}
+
+	return data, nil
+}
+
 func readFrame(ws *WebSocket) error {
 	b1, err := ws.rw.ReadByte()
 	if err != nil {
@@ -293,10 +328,6 @@ func readFrame(ws *WebSocket) error {
 			int64(buffer[4])<<24 | int64(buffer[5])<<16 | int64(buffer[6])<<8 | int64(buffer[7])
 	}
 
-	if payload_len > global_frame_max_size {
-		return fmt.Errorf("Payload length %d exceeds maximum frame size %d", payload_len, global_frame_max_size)
-	}
-
 	if is_masked {
 		n, err := ws.rw.Read(mask_key)
 		if err != nil {
@@ -307,34 +338,52 @@ func readFrame(ws *WebSocket) error {
 		}
 	}
 
-	data := make([]byte, payload_len)
-	data_len := int64(0)
-	for data_len < payload_len {
-		n, err := ws.rw.Read(data[data_len:])
+	if is_close {
+		err := validatePayloadLength(ws, true, payload_len)
 		if err != nil {
 			return err
 		}
-		data_len += int64(n)
-	}
-
-	if is_masked {
-		maskData(mask_key, data)
-	}
-
-	if is_close {
+		data, err := readPayload(ws, payload_len, is_masked, mask_key)
+		if err != nil {
+			data = makeStatusCodeBytes(ERROR_CODE_PROTOCOL_ERROR)
+		}
 		closeWebSocket(ws, data)
 	} else if is_ping {
+		err := validatePayloadLength(ws, true, payload_len)
+		if err != nil {
+			return err
+		}
+		data, err := readPayload(ws, payload_len, is_masked, mask_key)
+		if err != nil {
+			return err
+		}
 		sendFrame(ws, OPCODE_PONG, nil, data)
 	} else if is_pong {
 		// Ignore pong frames for now
 		// TODO: Implement ping keepalive
 		// Pongs will be used to update last active timestamp
 	} else if is_text {
+		err := validatePayloadLength(ws, false, payload_len)
+		if err != nil {
+			return err
+		}
+		data, err := readPayload(ws, payload_len, is_masked, mask_key)
+		if err != nil {
+			return err
+		}
 		if ws.ReceiveTextHandler != nil {
 			s := string(data)
 			ws.ReceiveTextHandler(ws, s)
 		}
 	} else if is_binary {
+		err := validatePayloadLength(ws, false, payload_len)
+		if err != nil {
+			return err
+		}
+		data, err := readPayload(ws, payload_len, is_masked, mask_key)
+		if err != nil {
+			return err
+		}
 		if ws.ReceiveBinaryHandler != nil {
 			ws.ReceiveBinaryHandler(ws, data)
 		}
