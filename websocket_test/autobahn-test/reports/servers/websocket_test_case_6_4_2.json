@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Same as Case 6.4.1, but in 2nd frame, we send only up to and including the octet making the complete payload invalid.\n<br><br>MESSAGE PARTS:<br>\nPART1 = cebae1bdb9cf83cebcceb5f4<br>\nPART2 = 90<br>\nPART3 = 8080656469746564<br>\n",
    "droppedByMe": false,
-   "duration": 1,
+   "duration": 2,
    "expectation": "The first frame is accepted, we expect to timeout on the first wait. The 2nd frame should be rejected immediately (fail fast on UTF-8). If we timeout, we expect the connection is failed at least then, since the complete message payload is not valid UTF-8.",
    "expected": {
       "NON-STRICT": [
@@ -37,8 +37,8 @@
       "requireClean": false
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: rZLNjavb9SBdJBcNlWUMWg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 8GtqFpSVjBlNfSx/tQrurbyT7EM=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: YWvWbxo/inodrWvFqRigxA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: fKLVMD0eQqd4TCsz+w0LDj8oT6g=\r\n\r\n",
    "id": "6.4.2",
    "isServer": false,
    "localCloseCode": 1000,
@@ -57,7 +57,7 @@
       "4": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:52.841Z",
+   "started": "2026-02-10T04:40:52.662Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -98,7 +98,7 @@
          1,
          false,
          0,
-         "fee404e9",
+         "8581860c",
          null,
          null,
          false
@@ -107,7 +107,7 @@
          "TO",
          [
             18,
-            "018cfee404e9305ee554472b8727422ab11d"
+            "018c8581860c4b3b67b13c4e05c2394f33f8"
          ],
          false
       ],
@@ -144,7 +144,7 @@
          8,
          true,
          0,
-         "9650bbb2",
+         "0b3d70d4",
          null,
          null,
          false
@@ -153,7 +153,7 @@
          "TO",
          [
             8,
-            "88829650bbb295b8"
+            "88820b3d70d408d5"
          ],
          false
       ]

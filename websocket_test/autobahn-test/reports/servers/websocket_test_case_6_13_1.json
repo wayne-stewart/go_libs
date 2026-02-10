@@ -22,8 +22,8 @@
       "requireClean": false
    },
    "failedByMe": true,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: dXeNMv+e5IAHcXizYokRRQ==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: NPw/OlVl/PRcVVaEQZbXeMeJ7CY=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: gfg0V4H3UoLEmFtaTIhjxw==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: v34R7Esg/EB4hD7FDziQnnXwm7g=\r\n\r\n",
    "id": "6.13.1",
    "isServer": false,
    "localCloseCode": 1007,
@@ -42,7 +42,7 @@
       "64": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:52.992Z",
+   "started": "2026-02-10T04:40:52.869Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -83,7 +83,7 @@
          1,
          true,
          0,
-         "45a597b7",
+         "39a5980b",
          null,
          null,
          false
@@ -92,7 +92,7 @@
          "TO",
          [
             68,
-            "81be45a597b7858556978785549781855297838550978d855e978f855c9789855a978b855897958546979785449791854297938540979d854e979f854c979985 ..."
+            "81be39a5980bf985592bfb855b2bfd855d2bff855f2bf185512bf385532bf585552bf785572be985492beb854b2bed854d2bef854f2be185412be385432be585 ..."
          ],
          false
       ],
@@ -116,7 +116,7 @@
          8,
          true,
          0,
-         "e0c901f3",
+         "ba318d06",
          null,
          null,
          false
@@ -125,7 +125,7 @@
          "TO",
          [
             88,
-            "88d2e0c901f3e326649d83a6749d94ac739684e9689d96a86d9a84e954a7a6e439d397a1689f85e971818faa648093a06f94c0bd648b94e96c9693ba609485e9 ..."
+            "88d2ba318d06b9dee868d95ef868ce54ff63de11e468cc50e16fde11d852fc1cb526cd59e46adf11fd74d552e875c958e3619a45e87ece11e063c942ec61df11 ..."
          ],
          false
       ],

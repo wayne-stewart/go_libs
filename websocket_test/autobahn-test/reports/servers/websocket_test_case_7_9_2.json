@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send close with invalid close code 999",
    "droppedByMe": true,
-   "duration": 1,
+   "duration": 2,
    "expectation": "Clean close with protocol error code or drop TCP",
    "expected": {
       "OK": []
@@ -21,8 +21,8 @@
       "requireClean": false
    },
    "failedByMe": true,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: J/zHN23N6Ikq28PaisA0RA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: meb1bE4ojp+z/sSRgTWxx0I6l1Y=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: BF9tt52DTFwGCHYdccrt9w==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: Zenw0MlUusfNBKNCkhrcbUkJ8G4=\r\n\r\n",
    "id": "7.9.2",
    "isServer": false,
    "localCloseCode": 999,
@@ -41,7 +41,7 @@
       "4": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:53.371Z",
+   "started": "2026-02-10T04:40:53.401Z",
    "trafficStats": null,
    "txFrameStats": {
       "8": 1
@@ -80,7 +80,7 @@
          8,
          true,
          0,
-         "b3bfb9b3",
+         "da53fb75",
          null,
          null,
          false
@@ -89,7 +89,7 @@
          "TO",
          [
             8,
-            "8882b3bfb9b3b058"
+            "8882da53fb75d9b4"
          ],
          false
       ],

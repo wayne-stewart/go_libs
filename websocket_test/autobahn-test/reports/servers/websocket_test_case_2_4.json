@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send ping with binary payload of 125 octets.",
    "droppedByMe": false,
-   "duration": 1,
+   "duration": 2,
    "expectation": "Pong with payload echo'ed is sent in reply to Ping. Clean close with normal code.",
    "expected": {
       "OK": [
@@ -26,8 +26,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: gu9kydZbz6kvDSMundpzMA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: AGj7SKkbXyC21yFEAA2bONdnqcE=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: MgZt6mUsLnmotv16z5VSpQ==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: v09AfhCl/W/rcVO8rhTT4HnqB+U=\r\n\r\n",
    "id": "2.4",
    "isServer": false,
    "localCloseCode": 1000,
@@ -53,7 +53,7 @@
       "127": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:52.624Z",
+   "started": "2026-02-10T04:40:52.344Z",
    "trafficStats": null,
    "txFrameStats": {
       "8": 1,
@@ -94,7 +94,7 @@
          9,
          true,
          0,
-         "607f1da2",
+         "61c4bafe",
          null,
          null,
          false
@@ -103,7 +103,7 @@
          "TO",
          [
             131,
-            "89fd607f1da29e81e35c9e81e35c9e81e35c9e81e35c9e81e35c9e81e35c9e81e35c9e81e35c9e81e35c9e81e35c9e81e35c9e81e35c9e81e35c9e81e35c9e81 ..."
+            "89fd61c4bafe9f3a44009f3a44009f3a44009f3a44009f3a44009f3a44009f3a44009f3a44009f3a44009f3a44009f3a44009f3a44009f3a44009f3a44009f3a ..."
          ],
          false
       ],
@@ -139,7 +139,7 @@
          8,
          true,
          0,
-         "6d285c7a",
+         "ad793834",
          null,
          null,
          false
@@ -148,7 +148,7 @@
          "TO",
          [
             8,
-            "88826d285c7a6ec0"
+            "8882ad793834ae91"
          ],
          false
       ],

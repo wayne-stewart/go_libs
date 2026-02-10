@@ -22,8 +22,8 @@
       "requireClean": false
    },
    "failedByMe": true,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: BDiMctgmABVqlorE3X33vw==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: BGAGeIORZts9puaGNXopjo4kmQs=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: PavjYS4eVOE59j+5urfLwQ==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: p0ZExoDauU0QwPsc0gcjbTxdOxg=\r\n\r\n",
    "id": "6.12.6",
    "isServer": false,
    "localCloseCode": 1007,
@@ -42,7 +42,7 @@
       "7": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:52.983Z",
+   "started": "2026-02-10T04:40:52.857Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -83,7 +83,7 @@
          1,
          true,
          0,
-         "b9c41e44",
+         "2b8bf552",
          null,
          null,
          false
@@ -92,7 +92,7 @@
          "TO",
          [
             11,
-            "8185b9c41e44397b9efb39"
+            "81852b8bf552ab3475edab"
          ],
          false
       ],
@@ -116,7 +116,7 @@
          8,
          true,
          0,
-         "1b0fcd39",
+         "f6bfbb28",
          null,
          null,
          false
@@ -125,7 +125,7 @@
          "TO",
          [
             88,
-            "88d21b0fcd3918e0a8577860b8576f6abf5c7f2fa4576d6ea1507f2f986d5d22f5196c67a4557e2fbd4b746ca84a6866a35e3b7ba8416f2fa05c687cac5e7e2f ..."
+            "88d2f6bfbb28f550de4695d0ce4682dac94d929fd24680ded741929fee7cb092830881d7d244939fcb5a99dcde5b85d6d54fd6cbde50829fd64d85ccda4f939f ..."
          ],
          false
       ],

@@ -22,8 +22,8 @@
       "requireClean": false
    },
    "failedByMe": true,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: TB6M0FK9PpIHt5C3G7EWkQ==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: BURCBVaYjlJa0kea7E1ANa9OXOM=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: bizvtAqVMDi8I7xwWipTWA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 1pz+8+G1m5qeTiOGoMgKL9CgS7c=\r\n\r\n",
    "id": "7.5.1",
    "isServer": false,
    "localCloseCode": 1000,
@@ -42,7 +42,7 @@
       "24": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:53.328Z",
+   "started": "2026-02-10T04:40:53.349Z",
    "trafficStats": null,
    "txFrameStats": {
       "8": 1
@@ -81,7 +81,7 @@
          8,
          true,
          0,
-         "37e76aeb",
+         "d134353d",
          null,
          null,
          false
@@ -90,7 +90,7 @@
          "TO",
          [
             28,
-            "889637e76aeb340fa451d65ad324b429d625820aca6b5283039f5283"
+            "8896d134353dd2dcfb8730898cf252fa89f364d995bdb4505c49b450"
          ],
          false
       ],

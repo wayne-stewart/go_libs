@@ -22,8 +22,8 @@
       "requireClean": false
    },
    "failedByMe": true,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: yL85cLbvzIxzOos+qnCoog==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 2mbmE/rrU9s/CKNtVFi+vjPtx1c=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: C0c0NIWfl/avLc8J0IaKfQ==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: tHveDPrPXy1j9radTGIFuh8oli4=\r\n\r\n",
    "id": "6.6.3",
    "isServer": false,
    "localCloseCode": 1007,
@@ -44,7 +44,7 @@
       "87": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:52.871Z",
+   "started": "2026-02-10T04:40:52.703Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -85,7 +85,7 @@
          1,
          true,
          0,
-         "cc7613f7",
+         "a13975b1",
          null,
          null,
          false
@@ -94,7 +94,7 @@
          "TO",
          [
             9,
-            "8183cc7613f702ccf2"
+            "8183a13975b16f8394"
          ],
          false
       ],
@@ -130,7 +130,7 @@
          8,
          true,
          0,
-         "52b510db",
+         "4c5008eb",
          null,
          null,
          false
@@ -139,7 +139,7 @@
          "TO",
          [
             91,
-            "88d552b510db515a458f149828fb26d068af72d875a821d477be72c571a23eda71bf72d07ebf37d130ac3bc178b23c9545b53bd67fbf379573b436d030ab3ddc ..."
+            "88d54c5008eb4fbf5dbf0a7d30cb3835709f6c3d6d983f316f8e6c206992203f698f6c35668f2934289c2524608222705d852533678f29706b842835289b2339 ..."
          ],
          false
       ],

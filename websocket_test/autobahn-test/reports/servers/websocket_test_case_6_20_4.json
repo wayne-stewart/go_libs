@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send a text message with payload which is not valid UTF-8 in one fragment.<br><br>Payload: 0xedafbf",
    "droppedByMe": true,
-   "duration": 1,
+   "duration": 2,
    "expectation": "The connection is failed immediately, since the payload is not valid UTF-8.",
    "expected": {
       "OK": []
@@ -22,8 +22,8 @@
       "requireClean": false
    },
    "failedByMe": true,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: ZkXTfXE/DlBsJuD26huNtw==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 1VR3gS1WIQBhFATrT7CaB+r77X8=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: u4JVQuGwaiNQIJBiKygfug==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: pfgUU4UynntToScbA83nnfTEkXY=\r\n\r\n",
    "id": "6.20.4",
    "isServer": false,
    "localCloseCode": 1007,
@@ -42,7 +42,7 @@
       "5": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:53.109Z",
+   "started": "2026-02-10T04:40:53.008Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -83,7 +83,7 @@
          1,
          true,
          0,
-         "cd005a3c",
+         "92d18984",
          null,
          null,
          false
@@ -92,7 +92,7 @@
          "TO",
          [
             9,
-            "8183cd005a3c20afe5"
+            "818392d189847f7e36"
          ],
          false
       ],
@@ -116,7 +116,7 @@
          8,
          true,
          0,
-         "2cf5a0c3",
+         "6c6b6573",
          null,
          null,
          false
@@ -125,7 +125,7 @@
          "TO",
          [
             88,
-            "88d22cf5a0c32f1ac5ad4f9ad5ad5890d2a648d5c9ad5a94ccaa48d5f5976ad898e35b9dc9af49d5d0b14396c5b05f9ccea40c81c5bb58d5cda65f86c1a449d5 ..."
+            "88d26c6b65736f84001d0f04101d180e1716084b0c1d1a0a091a084b30272a465d531b030c1f094b1501030800001f020b144c1f000b184b08161f180414094b ..."
          ],
          false
       ],

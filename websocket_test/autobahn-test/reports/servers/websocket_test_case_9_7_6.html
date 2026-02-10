@@ -202,7 +202,7 @@ pre.wirelog_tcp_closed_by_peer {color: #fff; margin: 0; background-color: #000; 
       <center><a href="https://autobahn-testsuite.readthedocs.io/" title="Autobahn WebSocket Testsuite"><img src="https://autobahn-testsuite.readthedocs.io/en/latest/_static/img/ws_protocol_test_report.png"          border="0" width="820" height="46" alt="Autobahn WebSocket Testsuite Report"></img></a></center>
       <center><a href="https://autobahn-testsuite.readthedocs.io/"           title="Autobahn WebSocket">          <img src="https://autobahn-testsuite.readthedocs.io/en/latest/_static/img/ws_protocol_test_report_autobahn.png" border="0" width="300" height="68" alt="Autobahn WebSocket">                 </img></a></center>
       <br/>
-      <p class="case case_ok">websocket-test - <span style="font-size: 1.3em;"><b>Case 9.7.6</b></span> : Pass - <span style="font-size: 0.9em;"><b>236</b> ms @ 2026-01-31T05:30:57.808Z</a></p>
+      <p class="case case_ok">websocket-test - <span style="font-size: 1.3em;"><b>Case 9.7.6</b></span> : Pass - <span style="font-size: 0.9em;"><b>238</b> ms @ 2026-02-10T04:40:57.731Z</a></p>
       <p class="case_text_block case_desc"><b>Case Description</b><br/><br/>Send 1000 text messages of payload size 4096 to measure implementation/network RTT (round trip time) / latency.</p>
       <p class="case_text_block case_expect"><b>Case Expectation</b><br/><br/>Receive echo'ed text messages (with payload as sent). Timeout case after 480 secs.</p>
 
@@ -221,12 +221,12 @@ Upgrade: WebSocket
 Connection: Upgrade
 Pragma: no-cache
 Cache-Control: no-cache
-Sec-WebSocket-Key: QO1URTk+5FCF1gOZRA1GWA==
+Sec-WebSocket-Key: qTFMA6gbNVVnhrqYVmLs0g==
 Sec-WebSocket-Version: 13</pre>
       <pre class="http_dump">HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
 Connection: Upgrade
-Sec-WebSocket-Accept: 3BHHxxB1wL52UhLQLoFAyS/I1V4=</pre>
+Sec-WebSocket-Accept: hPjoxkeAbt4TerPAdG0vCpAO7LY=</pre>
       <br/><hr/>
       <h2>Closing Behavior</h2>
       <table>
@@ -249,11 +249,11 @@ Sec-WebSocket-Accept: 3BHHxxB1wL52UhLQLoFAyS/I1V4=</pre>
       <h3>Octets Received by Chop Size</h3>
       <table>
          <tr class="stats_header"><td>Chop Size</td><td>Count</td><td>Octets</td></tr>
-         <tr class="stats_row"><td>4</td><td>9</td><td>36</td></tr>
+         <tr class="stats_row"><td>4</td><td>17</td><td>68</td></tr>
          <tr class="stats_row"><td>129</td><td>1</td><td>129</td></tr>
-         <tr class="stats_row"><td>4096</td><td>8</td><td>32768</td></tr>
-         <tr class="stats_row"><td>4100</td><td>992</td><td>4067200</td></tr>
-         <tr class="stats_total"><td>Total</td><td>1010</td><td>4100133</td></tr>
+         <tr class="stats_row"><td>4096</td><td>16</td><td>65536</td></tr>
+         <tr class="stats_row"><td>4100</td><td>984</td><td>4034400</td></tr>
+         <tr class="stats_total"><td>Total</td><td>1018</td><td>4100133</td></tr>
       </table>
       <h3>Octets Transmitted by Chop Size</h3>
       <table>
@@ -287,9 +287,9 @@ Sec-WebSocket-Accept: 3BHHxxB1wL52UhLQLoFAyS/I1V4=</pre>
          <pre class="wirelog_delay">002 WIRELOG DISABLED</pre>
          <pre class="wirelog_kill_after">003 CLOSE CONNECTION AFTER 480.000000 sec</pre>
          <pre class="wirelog_delay">004 WIRELOG ENABLED</pre>
-         <pre class="wirelog_tx_frame">005 TX FRAME : OPCODE=8, FIN=True, RSV=0, PAYLOAD-LEN=2, MASK=e7a1efc2, PAYLOAD-REPEAT-LEN=None, CHOPSIZE=None, SYNC=False</pre>
+         <pre class="wirelog_tx_frame">005 TX FRAME : OPCODE=8, FIN=True, RSV=0, PAYLOAD-LEN=2, MASK=730b6ab6, PAYLOAD-REPEAT-LEN=None, CHOPSIZE=None, SYNC=False</pre>
          <pre class="wirelog_tx_frame">               0x03e8</pre>
-         <pre class="wirelog_tx_octets">006 TX OCTETS: 8882e7a1efc2e449</pre>
+         <pre class="wirelog_tx_octets">006 TX OCTETS: 8882730b6ab670e3</pre>
          <pre class="wirelog_rx_octets">007 RX OCTETS: 880203e8</pre>
          <pre class="wirelog_rx_frame">008 RX FRAME : OPCODE=8, FIN=True, RSV=0, PAYLOAD-LEN=2, MASKED=False, MASK=None</pre>
          <pre class="wirelog_rx_frame">               0x03e8</pre>

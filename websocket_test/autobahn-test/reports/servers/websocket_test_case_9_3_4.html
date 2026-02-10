@@ -202,7 +202,7 @@ pre.wirelog_tcp_closed_by_peer {color: #fff; margin: 0; background-color: #000; 
       <center><a href="https://autobahn-testsuite.readthedocs.io/" title="Autobahn WebSocket Testsuite"><img src="https://autobahn-testsuite.readthedocs.io/en/latest/_static/img/ws_protocol_test_report.png"          border="0" width="820" height="46" alt="Autobahn WebSocket Testsuite Report"></img></a></center>
       <center><a href="https://autobahn-testsuite.readthedocs.io/"           title="Autobahn WebSocket">          <img src="https://autobahn-testsuite.readthedocs.io/en/latest/_static/img/ws_protocol_test_report_autobahn.png" border="0" width="300" height="68" alt="Autobahn WebSocket">                 </img></a></center>
       <br/>
-      <p class="case case_failed">websocket-test - <span style="font-size: 1.3em;"><b>Case 9.3.4</b></span> : Fail - <span style="font-size: 0.9em;"><b>16</b> ms @ 2026-01-31T05:30:54.066Z</a></p>
+      <p class="case case_failed">websocket-test - <span style="font-size: 1.3em;"><b>Case 9.3.4</b></span> : Fail - <span style="font-size: 0.9em;"><b>16</b> ms @ 2026-02-10T04:40:54.125Z</a></p>
       <p class="case_text_block case_desc"><b>Case Description</b><br/><br/>Send fragmented text message message with message payload of length 4 * 2**20 (4M). Sent out in fragments of 4k.</p>
       <p class="case_text_block case_expect"><b>Case Expectation</b><br/><br/>Receive echo'ed text message (with payload as sent).</p>
 
@@ -221,12 +221,12 @@ Upgrade: WebSocket
 Connection: Upgrade
 Pragma: no-cache
 Cache-Control: no-cache
-Sec-WebSocket-Key: J8K/VNc+VoSk7o7JS/6mDw==
+Sec-WebSocket-Key: oIJP7DCSlr31tr8qI8oZ3g==
 Sec-WebSocket-Version: 13</pre>
       <pre class="http_dump">HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
 Connection: Upgrade
-Sec-WebSocket-Accept: roEQ4TEphe0Gew8J/rxR+AhomLs=</pre>
+Sec-WebSocket-Accept: CL6Lz6YxZhbjrHc2jtbaoF7jp4A=</pre>
       <br/><hr/>
       <h2>Closing Behavior</h2>
       <table>

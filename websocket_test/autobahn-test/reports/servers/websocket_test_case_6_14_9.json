@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send a text message with payload which is not valid UTF-8 in one fragment.<br><br>Payload: 0xfbbfbfbf",
    "droppedByMe": true,
-   "duration": 1,
+   "duration": 2,
    "expectation": "The connection is failed immediately, since the payload is not valid UTF-8.",
    "expected": {
       "OK": []
@@ -22,8 +22,8 @@
       "requireClean": false
    },
    "failedByMe": true,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: TsADlyvU+VFl43rny8+Ffg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: R61N8ASKzwjcaT97QZHmBYBgeJE=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: G6C0rYxRHhMR937vmde3Eg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: TS9EJ1tfozmf49/IcC0xj2pxUNQ=\r\n\r\n",
    "id": "6.14.9",
    "isServer": false,
    "localCloseCode": 1007,
@@ -42,7 +42,7 @@
       "6": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:53.038Z",
+   "started": "2026-02-10T04:40:52.919Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -83,7 +83,7 @@
          1,
          true,
          0,
-         "a6443617",
+         "86723119",
          null,
          null,
          false
@@ -92,7 +92,7 @@
          "TO",
          [
             10,
-            "8184a64436175dfb89a8"
+            "8184867231197dcd8ea6"
          ],
          false
       ],
@@ -116,7 +116,7 @@
          8,
          true,
          0,
-         "238fc562",
+         "3c17125b",
          null,
          null,
          false
@@ -125,7 +125,7 @@
          "TO",
          [
             88,
-            "88d2238fc5622060a00c40e0b00c57eab70747afac0c55eea90b47af903665a2fd4254e7ac0e46afb5104ceca01150e6ab0503fba01a57afa80750fca40546af ..."
+            "88d23c17125b3ff877355f7867354872603e58377b354a767e325837470f7a3a2a7b4b7f7b3759376229537477284f7e7c3c1c63772348377f3e4f64733c5937 ..."
          ],
          false
       ],

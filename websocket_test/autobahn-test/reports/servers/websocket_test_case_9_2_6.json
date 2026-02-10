@@ -8,7 +8,7 @@
    "createWirelog": false,
    "description": "Send binary message message with payload of length 16 * 2**20 (16M).",
    "droppedByMe": false,
-   "duration": 109,
+   "duration": 141,
    "expectation": "Receive echo'ed binary message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: Z5LkXNIkSyo9BFkjZx6CVA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: awVgfK7uYUEcFAQAQAtSIYTRfQI=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: DBTkE34i9htxYr3QoAkWSg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: sCLTEwy4+HoGEb4nDTwRAeeyllA=\r\n\r\n",
    "id": "9.2.6",
    "isServer": false,
    "localCloseCode": null,
@@ -36,7 +36,7 @@
    "rxOctetStats": {
       "129": 1
    },
-   "started": "2026-01-31T05:30:53.764Z",
+   "started": "2026-02-10T04:40:53.785Z",
    "trafficStats": null,
    "txFrameStats": {
       "2": 1

@@ -8,7 +8,7 @@
    "createWirelog": false,
    "description": "Send fragmented text message message with message payload of length 4 * 2**20 (4M). Sent out in fragments of 16k.",
    "droppedByMe": false,
-   "duration": 26,
+   "duration": 17,
    "expectation": "Receive echo'ed text message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: p3MocRC4J7qwnSC01OZLOg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: wGpV+U5B1Defgk4N5ayRFSSObYE=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: qPhlecGTdI2e4cRgEpQZLA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: gNs52TH++lUaFaf1lCtbNj3BkMU=\r\n\r\n",
    "id": "9.3.5",
    "isServer": false,
    "localCloseCode": 1000,
@@ -39,7 +39,7 @@
       "4": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:54.086Z",
+   "started": "2026-02-10T04:40:54.144Z",
    "trafficStats": null,
    "txFrameStats": {
       "0": 256,

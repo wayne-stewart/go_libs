@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send unsolicited pong without payload. Verify nothing is received. Clean close with normal code.",
    "droppedByMe": false,
-   "duration": 1,
+   "duration": 2,
    "expectation": "Nothing.",
    "expected": {
       "OK": []
@@ -21,8 +21,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: dSCoDvrwL6W/9LbjjfWE6w==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: QQi/EzYmi2UWqPhKfyHxWDO1RS8=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: JmuDEt9kMrMPwm4WKXq0YA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: ELrLoKeFKjhW0Fxc2TyNcqEQ4lQ=\r\n\r\n",
    "id": "2.7",
    "isServer": false,
    "localCloseCode": 1000,
@@ -41,7 +41,7 @@
       "4": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:52.636Z",
+   "started": "2026-02-10T04:40:52.379Z",
    "trafficStats": null,
    "txFrameStats": {
       "8": 1,
@@ -82,7 +82,7 @@
          10,
          true,
          0,
-         "882ee4ab",
+         "984bd2db",
          null,
          null,
          false
@@ -91,7 +91,7 @@
          "TO",
          [
             6,
-            "8a80882ee4ab"
+            "8a80984bd2db"
          ],
          false
       ],
@@ -104,7 +104,7 @@
          8,
          true,
          0,
-         "d8420abf",
+         "54665a20",
          null,
          null,
          false
@@ -113,7 +113,7 @@
          "TO",
          [
             8,
-            "8882d8420abfdbaa"
+            "888254665a20578e"
          ],
          false
       ],

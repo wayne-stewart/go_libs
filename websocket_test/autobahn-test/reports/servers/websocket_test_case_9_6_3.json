@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send binary message message with payload of length 1 * 2**20 (1M). Sent out data in chops of 256 octets.",
    "droppedByMe": false,
-   "duration": 136,
+   "duration": 124,
    "expectation": "Receive echo'ed text message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: Qe3iZWR7iAg0Wp7KAb8l0Q==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: /FdUby2dNMUN1TwPX6T+OOVtrBE=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: rTa343CHDxT/cvrM/FoCkg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 6lTdsCxJ1gIaS3ACM/hCuDQEtkY=\r\n\r\n",
    "id": "9.6.3",
    "isServer": false,
    "localCloseCode": 1000,
@@ -38,12 +38,11 @@
    },
    "rxOctetStats": {
       "4": 1,
+      "10": 1,
       "129": 1,
-      "28682": 1,
-      "36864": 1,
-      "65536": 15
+      "65536": 16
    },
-   "started": "2026-01-31T05:30:56.476Z",
+   "started": "2026-02-10T04:40:56.401Z",
    "trafficStats": null,
    "txFrameStats": {
       "2": 1,
@@ -89,7 +88,7 @@
          8,
          true,
          0,
-         "47d4a144",
+         "517b83bb",
          null,
          null,
          false
@@ -98,7 +97,7 @@
          "TO",
          [
             8,
-            "888247d4a144443c"
+            "8882517b83bb5293"
          ],
          false
       ],

@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send 1000 binary messages of payload size 256 to measure implementation/network RTT (round trip time) / latency.",
    "droppedByMe": false,
-   "duration": 188,
+   "duration": 178,
    "expectation": "Receive echo'ed binary messages (with payload as sent). Timeout case after 120 secs.",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: v0IuILVKVP9/j6/RRTkIJw==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 6qP/GY+thY3IzYwKMWPGTfZMm9M=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: RO6ce0KoYYolv0bgUpBRmw==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: FArZvftuQr+bp+zNnNPVdX8ZJtQ=\r\n\r\n",
    "id": "9.8.4",
    "isServer": false,
    "localCloseCode": 1000,
@@ -41,7 +41,7 @@
       "129": 1,
       "260": 1000
    },
-   "started": "2026-01-31T05:30:58.534Z",
+   "started": "2026-02-10T04:40:58.494Z",
    "trafficStats": null,
    "txFrameStats": {
       "2": 1000,
@@ -93,7 +93,7 @@
          8,
          true,
          0,
-         "987a24fd",
+         "a9aa3270",
          null,
          null,
          false
@@ -102,7 +102,7 @@
          "TO",
          [
             8,
-            "8882987a24fd9b92"
+            "8882a9aa3270aa42"
          ],
          false
       ],

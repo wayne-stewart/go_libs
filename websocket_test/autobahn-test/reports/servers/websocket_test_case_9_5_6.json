@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send text message message with payload of length 1 * 2**20 (1M). Sent out data in chops of 2048 octets.",
    "droppedByMe": false,
-   "duration": 29,
+   "duration": 31,
    "expectation": "Receive echo'ed text message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: NADNCxyTW0nGukPazXbUUg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 0ebJC1K+pwcJIvNhV6D12kdMY+Y=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: y3+PiHwvxhDYdpjiBKtkGg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: Eo3C5WZpsai9XQyuTyeef90TN50=\r\n\r\n",
    "id": "9.5.6",
    "isServer": false,
    "localCloseCode": 1000,
@@ -38,12 +38,11 @@
    },
    "rxOctetStats": {
       "4": 1,
+      "10": 1,
       "129": 1,
-      "28682": 1,
-      "36864": 1,
-      "65536": 15
+      "65536": 16
    },
-   "started": "2026-01-31T05:30:55.614Z",
+   "started": "2026-02-10T04:40:55.647Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -89,7 +88,7 @@
          8,
          true,
          0,
-         "ced91ae0",
+         "b97e622a",
          null,
          null,
          false
@@ -98,7 +97,7 @@
          "TO",
          [
             8,
-            "8882ced91ae0cd31"
+            "8882b97e622aba96"
          ],
          false
       ],

@@ -8,7 +8,7 @@
    "createWirelog": false,
    "description": "Send fragmented binary message message with message payload of length 4 * 2**20 (4M). Sent out in fragments of 256.",
    "droppedByMe": false,
-   "duration": 29,
+   "duration": 30,
    "expectation": "Receive echo'ed binary message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,36 +19,41 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: Vl6XAcsZhB/8ouLHbx6RSg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: ZFY3zTx7qiqm39F2epAGV3IDXGA=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: h1zXPGV6VuIXFsJ0+IjCBQ==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: qZ3hmeRaReFj+IPFZkYzixrwqKg=\r\n\r\n",
    "id": "9.4.2",
    "isServer": false,
-   "localCloseCode": null,
+   "localCloseCode": 1000,
    "localCloseReason": null,
    "received": [],
-   "remoteCloseCode": null,
+   "remoteCloseCode": 1000,
    "remoteCloseReason": null,
    "reportCompressionRatio": false,
    "reportTime": true,
    "result": "Did not receive message within 100 seconds.",
    "resultClose": "The connection was failed by the wrong endpoint",
-   "rxFrameStats": {},
+   "rxFrameStats": {
+      "8": 1
+   },
    "rxOctetStats": {
+      "4": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:54.263Z",
+   "started": "2026-02-10T04:40:54.319Z",
    "trafficStats": null,
    "txFrameStats": {
       "0": 16384,
-      "2": 1
+      "2": 1,
+      "8": 1
    },
    "txOctetStats": {
       "6": 1,
+      "8": 1,
       "264": 16385
    },
-   "wasClean": false,
+   "wasClean": true,
    "wasCloseHandshakeTimeout": false,
-   "wasNotCleanReason": "peer dropped the TCP connection without previous WebSocket closing handshake",
+   "wasNotCleanReason": null,
    "wasOpenHandshakeTimeout": false,
    "wasServerConnectionDropTimeout": false,
    "wirelog": [

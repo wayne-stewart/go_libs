@@ -243,28 +243,44 @@ func readLoop(ws *WebSocket) {
 	for {
 		err := readFrame(ws)
 		if err != nil {
+			//fmt.Printf("readFrame error: %s\n", err)
 			closeWebSocket(ws, makeStatusCodeBytes(ERROR_CODE_NORMAL_CLOSURE))
 			return
 		}
 	}
 }
 
-func readPayload(ws *WebSocket, payload_len int64, is_masked bool, mask_key []byte) ([]byte, error) {
+func readMessage(ws *WebSocket) {
 
-	data := make([]byte, payload_len)
-	data_len := int64(0)
-	for data_len < payload_len {
-		n, err := ws.rw.Read(data[data_len:])
-		if err != nil {
-			return nil, err
-		}
-		data_len += int64(n)
+}
+
+func handleMessage(ws *WebSocket) {
+
+}
+
+func readPayload(ws *WebSocket, payload_len int64, is_masked bool, mask_key []byte) ([]byte, error) {
+	data, err := readToN(ws, payload_len)
+	if err != nil {
+		return data, err
 	}
 
 	if is_masked {
 		maskData(mask_key, data)
 	}
 
+	return data, nil
+}
+
+func readToN(ws *WebSocket, n int64) ([]byte, error) {
+	data := make([]byte, n)
+	len := int64(0)
+	for len < n {
+		c, err := ws.rw.Read(data[len:])
+		if err != nil {
+			return nil, err
+		}
+		len += int64(c)
+	}
 	return data, nil
 }
 
@@ -303,38 +319,27 @@ func readFrame(ws *WebSocket) error {
 	}
 	is_masked := b2&0x80 == 0x80
 	payload_len := int64(b2 & 0x7F)
-	mask_key := make([]byte, 4)
+	var mask_key []byte
 
 	if payload_len == 126 {
-		buffer := make([]byte, 2)
-		n, err := ws.rw.Read(buffer)
+		buffer, err := readToN(ws, 2)
 		if err != nil {
 			return err
-		}
-		if n != 2 {
-			return errors.New("Could not read extended payload length")
 		}
 		payload_len = int64(buffer[0])<<8 | int64(buffer[1])
 	} else if payload_len == 127 {
-		buffer := make([]byte, 8)
-		n, err := ws.rw.Read(buffer)
+		buffer, err := readToN(ws, 8)
 		if err != nil {
 			return err
-		}
-		if n != 8 {
-			return errors.New("Could not read extended payload length")
 		}
 		payload_len = int64(buffer[0])<<56 | int64(buffer[1])<<48 | int64(buffer[2])<<40 | int64(buffer[3])<<32 |
 			int64(buffer[4])<<24 | int64(buffer[5])<<16 | int64(buffer[6])<<8 | int64(buffer[7])
 	}
 
 	if is_masked {
-		n, err := ws.rw.Read(mask_key)
+		mask_key, err = readToN(ws, 4)
 		if err != nil {
 			return err
-		}
-		if n != 4 {
-			return errors.New("Could not read masking key")
 		}
 	}
 
@@ -359,9 +364,17 @@ func readFrame(ws *WebSocket) error {
 		}
 		sendFrame(ws, OPCODE_PONG, nil, data)
 	} else if is_pong {
-		// Ignore pong frames for now
-		// TODO: Implement ping keepalive
-		// Pongs will be used to update last active timestamp
+		// TODO: implement ping/pong to test if clients disconnected
+		// The way to handle an unsolicited pong is to just read it
+		// in and do nothing with it.
+		err := validatePayloadLength(ws, false, payload_len)
+		if err != nil {
+			return err
+		}
+		_, err = readPayload(ws, payload_len, is_masked, mask_key)
+		if err != nil {
+			return err
+		}
 	} else if is_text {
 		err := validatePayloadLength(ws, false, payload_len)
 		if err != nil {
@@ -393,6 +406,7 @@ func readFrame(ws *WebSocket) error {
 }
 
 func sendFrame(ws *WebSocket, opcode byte, mask_key []byte, payload []byte) error {
+	//fmt.Printf("sending opcode: %d\n", opcode)
 	payload_len := len(payload)
 	fin := byte(0x80)
 	header_length := 2

@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send ping with binary payload of 126 octets.",
    "droppedByMe": false,
-   "duration": 1,
+   "duration": 2,
    "expectation": "Connection is failed immediately (1002/Protocol Error), since control frames are only allowed to have payload up to and including 125 octets..",
    "expected": {
       "OK": []
@@ -21,8 +21,8 @@
       "requireClean": false
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: swgzZCrkXw3G0nO81l19Tg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 9Ma7FjZQZ8ubZXWl8oRHtJKJ468=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: kpcnt/azfVDNC4zF460ybw==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 3t+gFCbYl4pJ8si5uDs8VqMAWW8=\r\n\r\n",
    "id": "2.5",
    "isServer": false,
    "localCloseCode": 1000,
@@ -41,7 +41,7 @@
       "4": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:52.628Z",
+   "started": "2026-02-10T04:40:52.351Z",
    "trafficStats": null,
    "txFrameStats": {
       "8": 1,
@@ -82,7 +82,7 @@
          9,
          true,
          0,
-         "cec5b791",
+         "047058d6",
          null,
          null,
          false
@@ -91,7 +91,7 @@
          "TO",
          [
             134,
-            "89fe007ecec5b791303b496f303b496f303b496f303b496f303b496f303b496f303b496f303b496f303b496f303b496f303b496f303b496f303b496f303b496f ..."
+            "89fe007e047058d6fa8ea628fa8ea628fa8ea628fa8ea628fa8ea628fa8ea628fa8ea628fa8ea628fa8ea628fa8ea628fa8ea628fa8ea628fa8ea628fa8ea628 ..."
          ],
          false
       ],
@@ -127,7 +127,7 @@
          8,
          true,
          0,
-         "55b9aff8",
+         "a5f6b803",
          null,
          null,
          false
@@ -136,7 +136,7 @@
          "TO",
          [
             8,
-            "888255b9aff85651"
+            "8882a5f6b803a61e"
          ],
          false
       ]

@@ -1,14 +1,14 @@
 {
    "agent": "websocket-test",
-   "behavior": "FAILED",
-   "behaviorClose": "FAILED",
+   "behavior": "OK",
+   "behaviorClose": "OK",
    "case": 25,
-   "closedByMe": false,
+   "closedByMe": true,
    "createStats": true,
    "createWirelog": true,
    "description": "Send unsolicited pong with payload. Send ping with payload. Verify pong for ping is received.",
    "droppedByMe": false,
-   "duration": 1,
+   "duration": 3,
    "expectation": "Nothing in reply to own Pong, but Pong with payload echo'ed in reply to Ping. Clean close with normal code.",
    "expected": {
       "OK": [
@@ -26,27 +26,34 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: dqeVTUNnn/JrORStW+KouQ==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: BjSFcKujgeuaEZm2yN5gChr4EZo=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: VTHLeNVfZbp1h3oj7eXnSw==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: lI75vr7NQo7wZVLOzd8YbJkl1+k=\r\n\r\n",
    "id": "2.9",
    "isServer": false,
    "localCloseCode": 1000,
    "localCloseReason": null,
-   "received": [],
+   "received": [
+      [
+         "pong",
+         "ping payload"
+      ]
+   ],
    "remoteCloseCode": 1000,
    "remoteCloseReason": null,
    "reportCompressionRatio": false,
    "reportTime": false,
-   "result": "Actual events differ from any expected.",
-   "resultClose": "The connection was failed by the wrong endpoint",
+   "result": "Actual events match at least one expected.",
+   "resultClose": "Connection was properly closed",
    "rxFrameStats": {
-      "8": 1
+      "8": 1,
+      "10": 1
    },
    "rxOctetStats": {
       "4": 1,
+      "14": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:52.647Z",
+   "started": "2026-02-10T05:18:44.276Z",
    "trafficStats": null,
    "txFrameStats": {
       "8": 1,
@@ -89,7 +96,7 @@
          10,
          true,
          0,
-         "433c0b6d",
+         "d38cce62",
          null,
          null,
          false
@@ -98,7 +105,7 @@
          "TO",
          [
             30,
-            "8a98433c0b6d365278022f55680437596f4d3353650a634c6a142f536a09"
+            "8a98d38cce62a6e2bd0dbfe5ad0ba7e9aa42a3e3a005f3fcaf1bbfe3af06"
          ],
          false
       ],
@@ -111,7 +118,7 @@
          9,
          true,
          0,
-         "d7660408",
+         "dccb8f14",
          null,
          null,
          false
@@ -120,13 +127,54 @@
          "TO",
          [
             18,
-            "898cd7660408a70f6a6ff7166571bb09656c"
+            "898cdccb8f14aca2e173fcbbee6db0a4ee70"
          ],
          false
       ],
       [
          "TI",
          1
+      ],
+      [
+         "RO",
+         [
+            14,
+            "8a0c70696e67207061796c6f6164"
+         ]
+      ],
+      [
+         "RF",
+         [
+            12,
+            "ping payload"
+         ],
+         10,
+         true,
+         0,
+         false,
+         null
+      ],
+      [
+         "TF",
+         [
+            2,
+            "0x03e8"
+         ],
+         8,
+         true,
+         0,
+         "56943b8f",
+         null,
+         null,
+         false
+      ],
+      [
+         "TO",
+         [
+            8,
+            "888256943b8f557c"
+         ],
+         false
       ],
       [
          "RO",
@@ -146,28 +194,6 @@
          0,
          false,
          null
-      ],
-      [
-         "TF",
-         [
-            2,
-            "0x03e8"
-         ],
-         8,
-         true,
-         0,
-         "d11e04df",
-         null,
-         null,
-         false
-      ],
-      [
-         "TO",
-         [
-            8,
-            "8882d11e04dfd2f6"
-         ],
-         false
       ]
    ]
 }

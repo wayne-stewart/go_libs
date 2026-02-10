@@ -22,8 +22,8 @@
       "requireClean": false
    },
    "failedByMe": true,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: v4qS2k6SbEYSV/FdNRiaZg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: bAW1hRZUdu6CniuVd33BBtffNLA=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: 1zWvVWRwC9cFipBfJS3H8w==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: gGVCFSZYO1I7KaoQXSem0qQ+NOc=\r\n\r\n",
    "id": "6.16.2",
    "isServer": false,
    "localCloseCode": 1007,
@@ -42,7 +42,7 @@
       "3": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:53.049Z",
+   "started": "2026-02-10T04:40:52.935Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -83,7 +83,7 @@
          1,
          true,
          0,
-         "1e099487",
+         "38ab6936",
          null,
          null,
          false
@@ -92,7 +92,7 @@
          "TO",
          [
             7,
-            "81811e099487e1"
+            "818138ab6936c7"
          ],
          false
       ],
@@ -116,7 +116,7 @@
          8,
          true,
          0,
-         "0ca118fa",
+         "164b0079",
          null,
          null,
          false
@@ -125,7 +125,7 @@
          "TO",
          [
             88,
-            "88d20ca118fa0f4e7d946fce6d9478c46a9f688171947ac0749368814dae4a8c20da7bc971966981688863c27d897fc8769d2cd57d827881759f7fd2799d6981 ..."
+            "88d2164b007915a4651775247517622e721c726b6917602a6c10726b552d5066385961236915736b700b7928650a65226e1e363f6501626b6d1c6538611e736b ..."
          ],
          false
       ],

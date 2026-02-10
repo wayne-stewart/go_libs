@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send binary message message with payload of length 1 * 2**20 (1M).",
    "droppedByMe": false,
-   "duration": 13,
+   "duration": 10,
    "expectation": "Receive echo'ed binary message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: lJRmL0p2TV4GxY4NLWerMw==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: zPRpIhdNZjr7x2Si9mgDpY1i1TQ=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: /D1cokQiL5nUQneWU4wnuA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: JTpQJONW0O/J09Ny8z9QjctWjyQ=\r\n\r\n",
    "id": "9.2.3",
    "isServer": false,
    "localCloseCode": 1000,
@@ -39,13 +39,15 @@
    "rxOctetStats": {
       "4": 1,
       "129": 1,
-      "12818": 1,
-      "16072": 1,
-      "36760": 1,
-      "65432": 1,
-      "65536": 14
+      "24368": 1,
+      "32352": 1,
+      "32768": 2,
+      "36864": 1,
+      "45742": 1,
+      "57292": 1,
+      "65536": 12
    },
-   "started": "2026-01-31T05:30:53.654Z",
+   "started": "2026-02-10T04:40:53.693Z",
    "trafficStats": null,
    "txFrameStats": {
       "2": 1,
@@ -90,7 +92,7 @@
          8,
          true,
          0,
-         "9446db90",
+         "c2a336d0",
          null,
          null,
          false
@@ -99,7 +101,7 @@
          "TO",
          [
             8,
-            "88829446db9097ae"
+            "8882c2a336d0c14b"
          ],
          false
       ],

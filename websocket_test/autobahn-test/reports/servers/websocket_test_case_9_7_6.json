@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send 1000 text messages of payload size 4096 to measure implementation/network RTT (round trip time) / latency.",
    "droppedByMe": false,
-   "duration": 236,
+   "duration": 238,
    "expectation": "Receive echo'ed text messages (with payload as sent). Timeout case after 480 secs.",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: QO1URTk+5FCF1gOZRA1GWA==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 3BHHxxB1wL52UhLQLoFAyS/I1V4=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: qTFMA6gbNVVnhrqYVmLs0g==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: hPjoxkeAbt4TerPAdG0vCpAO7LY=\r\n\r\n",
    "id": "9.7.6",
    "isServer": false,
    "localCloseCode": 1000,
@@ -37,12 +37,12 @@
       "8": 1
    },
    "rxOctetStats": {
-      "4": 9,
+      "4": 17,
       "129": 1,
-      "4096": 8,
-      "4100": 992
+      "4096": 16,
+      "4100": 984
    },
-   "started": "2026-01-31T05:30:57.808Z",
+   "started": "2026-02-10T04:40:57.731Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1000,
@@ -95,7 +95,7 @@
          8,
          true,
          0,
-         "e7a1efc2",
+         "730b6ab6",
          null,
          null,
          false
@@ -104,7 +104,7 @@
          "TO",
          [
             8,
-            "8882e7a1efc2e449"
+            "8882730b6ab670e3"
          ],
          false
       ],

@@ -1,6 +1,6 @@
 {
    "agent": "websocket-test",
-   "behavior": "NON-STRICT",
+   "behavior": "OK",
    "behaviorClose": "WRONG CODE",
    "case": 44,
    "closedByMe": false,
@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send small text message, then send frame with reserved control <b>Opcode = 15</b> and non-empty payload, then send Ping.",
    "droppedByMe": false,
-   "duration": 1,
+   "duration": 8,
    "expectation": "Echo for first message is received, but then connection is failed immediately, since reserved opcode frame is used. A Pong is not received.",
    "expected": {
       "NON-STRICT": [],
@@ -28,13 +28,19 @@
       "requireClean": false
    },
    "failedByMe": false,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: JqcdXCrqf5Jc0SFkVt7W7Q==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: OabmxgNReBrNmVZ2ZU+yvlIZ/MY=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: LxoJ0PFj0T+0HX2/V0nkKQ==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: rnqcYQhoCKRtv/E1H9Pnl9z83CU=\r\n\r\n",
    "id": "4.2.5",
    "isServer": false,
    "localCloseCode": 1000,
    "localCloseReason": null,
-   "received": [],
+   "received": [
+      [
+         "message",
+         "Hello, world!",
+         false
+      ]
+   ],
    "remoteCloseCode": 1000,
    "remoteCloseReason": null,
    "reportCompressionRatio": false,
@@ -42,13 +48,14 @@
    "result": "Actual events match at least one expected.",
    "resultClose": "The close code should have been 1002 or empty",
    "rxFrameStats": {
+      "1": 1,
       "8": 1
    },
    "rxOctetStats": {
-      "4": 1,
+      "19": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:52.718Z",
+   "started": "2026-02-10T04:40:52.490Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -57,7 +64,7 @@
       "15": 1
    },
    "txOctetStats": {
-      "1": 6,
+      "1": 23,
       "264": 1
    },
    "wasClean": true,
@@ -90,7 +97,7 @@
          1,
          true,
          0,
-         "cdfd58d1",
+         "8abb2587",
          null,
          1,
          false
@@ -112,7 +119,7 @@
          15,
          true,
          0,
-         "03a376a7",
+         "3ca405dd",
          null,
          1,
          false
@@ -126,7 +133,7 @@
          9,
          true,
          0,
-         "51deec07",
+         "9e1fdc04",
          null,
          1,
          false
@@ -147,7 +154,7 @@
          "TO",
          [
             1,
-            "cd"
+            "8a"
          ],
          true
       ],
@@ -155,7 +162,7 @@
          "TO",
          [
             1,
-            "fd"
+            "bb"
          ],
          true
       ],
@@ -163,16 +170,164 @@
          "TO",
          [
             1,
-            "58"
+            "25"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "87"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "c2"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "de"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "49"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "eb"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "e5"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "97"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "05"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "f0"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "e5"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "c9"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "49"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "e3"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "ab"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "8f"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "8d"
+         ],
+         true
+      ],
+      [
+         "TO",
+         [
+            1,
+            "3c"
          ],
          true
       ],
       [
          "RO",
          [
-            4,
-            "880203e8"
+            19,
+            "810d48656c6c6f2c20776f726c6421880203e8"
          ]
+      ],
+      [
+         "RF",
+         [
+            13,
+            "Hello, world!"
+         ],
+         1,
+         true,
+         0,
+         false,
+         null
       ],
       [
          "RF",
@@ -195,7 +350,7 @@
          8,
          true,
          0,
-         "a5b1c82a",
+         "6888598b",
          null,
          null,
          false
@@ -204,7 +359,7 @@
          "TO",
          [
             1,
-            "d1"
+            "a4"
          ],
          true
       ]

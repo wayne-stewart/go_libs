@@ -22,8 +22,8 @@
       "requireClean": false
    },
    "failedByMe": true,
-   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: HtGxTcYIse8Gk91Wm+DTcg==\r\nSec-WebSocket-Version: 13\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 7AApsn7e5/j5d3CzYPRZOj0MUro=\r\n\r\n",
+   "httpRequest": "GET /ws-autobahn HTTP/1.1\r\nUser-Agent: AutobahnTestSuite/25.10.1-0.10.9\r\nHost: host.docker.internal:9001\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nSec-WebSocket-Key: MDu7fdWsR59tHIeNaFJwMQ==\r\nSec-WebSocket-Version: 13\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: zNf9kxx7sH97B0IjWOerJzluY4Q=\r\n\r\n",
    "id": "6.18.2",
    "isServer": false,
    "localCloseCode": 1007,
@@ -42,7 +42,7 @@
       "5": 1,
       "129": 1
    },
-   "started": "2026-01-31T05:30:53.074Z",
+   "started": "2026-02-10T04:40:52.961Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -83,7 +83,7 @@
          1,
          true,
          0,
-         "759a567f",
+         "f4ebd869",
          null,
          null,
          false
@@ -92,7 +92,7 @@
          "TO",
          [
             9,
-            "8183759a567f9505e9"
+            "8183f4ebd869147467"
          ],
          false
       ],
@@ -116,7 +116,7 @@
          8,
          true,
          0,
-         "871144a2",
+         "f3567433",
          null,
          null,
          false
@@ -125,7 +125,7 @@
          "TO",
          [
             88,
-            "88d2871144a284fe21cce47e31ccf37436c7e3312dccf17028cbe33111f6c13c7c82f0792dcee23134d0e87221d1f4782ac5a76521daf33129c7f46225c5e231 ..."
+            "88d2f3567433f0b9115d9039015d8733065697761d5d8537185a97762167b57b4c13843e1d5f967604419c351140803f1a54d322114b87761956802515549676 ..."
          ],
          false
       ],
